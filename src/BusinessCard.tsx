@@ -26,6 +26,7 @@ function generateVCard(): string {
   return [
     'BEGIN:VCARD',
     'VERSION:3.0',
+    'N:Stevenson;Mick;;;',
     'FN:' + name,
     'ORG:' + company,
     'TITLE:' + title,
