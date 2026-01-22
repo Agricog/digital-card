@@ -15,8 +15,8 @@ const CARD_DATA = {
     linkedin: 'https://www.linkedin.com/in/mickstevenson/',
   },
   products: [
-    { name: 'TradeCalcs', desc: 'BS 7671 calculators for electricians', url: 'https://tradecalcs.com' },
-    { name: 'EquipSafety', desc: 'QR-based safety compliance', url: 'https://equipsafety.com' },
+    { name: 'TradeCalcs', desc: 'BS 7671 calculators for electricians', url: 'https://tradecalcs.co.uk' },
+    { name: 'EquipSafety', desc: 'QR-based safety compliance', url: 'https://equipsafety.co.uk' },
     { name: 'DetailRecon', desc: 'AI reconnaissance for close protection', url: 'https://detailrecon.com' },
   ],
 };
