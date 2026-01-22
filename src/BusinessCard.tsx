@@ -26,13 +26,13 @@ function generateVCard(): string {
   return [
     'BEGIN:VCARD',
     'VERSION:3.0',
-    `FN:${name}`,
-    `ORG:${company}`,
-    `TITLE:${title}`,
-    `TEL;TYPE=CELL:${phone}`,
-    `EMAIL:${email}`,
-    `URL:${website}`,
-    `ADR;TYPE=WORK:;;;;;;${location}`,
+    'FN:' + name,
+    'ORG:' + company,
+    'TITLE:' + title,
+    'TEL;TYPE=CELL:' + phone,
+    'EMAIL:' + email,
+    'URL:' + website,
+    'ADR;TYPE=WORK:;;;;;;' + location,
     'END:VCARD',
   ].join('\n');
 }
@@ -43,7 +43,7 @@ function downloadVCard() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = `${CARD_DATA.name.replace(/\s+/g, '_')}_${CARD_DATA.company}.vcf`;
+  link.download = CARD_DATA.name.replace(/\s+/g, '_') + '_' + CARD_DATA.company + '.vcf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -95,8 +95,8 @@ export default function BusinessCard() {
             </div>
 
             <div className="space-y-3 mb-6">
-              
-                href={`mailto:${CARD_DATA.email}`}
+              <a
+                href={'mailto:' + CARD_DATA.email}
                 className="flex items-center gap-3 text-stone-700 hover:text-amber-600 transition-colors group"
               >
                 <div className="w-10 h-10 rounded-lg bg-stone-100 group-hover:bg-amber-50 flex items-center justify-center transition-colors">
@@ -107,8 +107,8 @@ export default function BusinessCard() {
                 <span className="text-sm">{CARD_DATA.email}</span>
               </a>
 
-              
-                href={`tel:${CARD_DATA.phone.replace(/\s/g, '')}`}
+              <a
+                href={'tel:' + CARD_DATA.phone.replace(/\s/g, '')}
                 className="flex items-center gap-3 text-stone-700 hover:text-amber-600 transition-colors group"
               >
                 <div className="w-10 h-10 rounded-lg bg-stone-100 group-hover:bg-amber-50 flex items-center justify-center transition-colors">
@@ -119,7 +119,7 @@ export default function BusinessCard() {
                 <span className="text-sm">{CARD_DATA.phone}</span>
               </a>
 
-              
+              <a
                 href={CARD_DATA.website}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -134,7 +134,7 @@ export default function BusinessCard() {
               </a>
 
               {CARD_DATA.socials.linkedin && (
-                
+                <a
                   href={CARD_DATA.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -152,22 +152,22 @@ export default function BusinessCard() {
 
             <button
               onClick={handleSave}
-              className="w-full py-3 px-4 bg-stone-900 hover:bg-stone-800 text-white rounded-xl font-medium transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+              className="w-full py-3 px-4 bg-stone-900 hover:bg-stone-800 text-white rounded-xl font-medium transition-all active:scale-95 flex items-center justify-center gap-2"
             >
               {saved ? (
-                <>
+                <span className="flex items-center gap-2">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Saved!
-                </>
+                </span>
               ) : (
-                <>
+                <span className="flex items-center gap-2">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                   </svg>
                   Save Contact
-                </>
+                </span>
               )}
             </button>
           </div>
@@ -180,7 +180,7 @@ export default function BusinessCard() {
             </h2>
             <div className="space-y-3">
               {CARD_DATA.products.map((product) => (
-                
+                <a
                   key={product.name}
                   href={product.url}
                   target="_blank"
