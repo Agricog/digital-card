@@ -206,7 +206,7 @@ export default function BusinessCard() {
 
         <div className="flex flex-col items-center gap-3 mt-6">
           {CARD_DATA.logo && (
-            <img src={CARD_DATA.logo} alt={CARD_DATA.company} className="h-8 object-contain" />
+            <img src={CARD_DATA.logo} alt={CARD_DATA.company} className="h-24 object-contain" />
           )}
           <p className="text-stone-400 text-xs">
             © {new Date().getFullYear()} {CARD_DATA.company}
