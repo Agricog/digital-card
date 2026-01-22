@@ -23,13 +23,9 @@ const CARD_DATA = {
 
 function generateVCard(): string {
   const { name, title, company, email, phone, website, location } = CARD_DATA;
-  const nameParts = name.split(' ');
-  const lastName = nameParts.pop() || '';
-  const firstName = nameParts.join(' ');
   return [
     'BEGIN:VCARD',
     'VERSION:3.0',
-    'N:' + lastName + ';' + firstName + ';;;',
     'FN:' + name,
     'ORG:' + company,
     'TITLE:' + title,
