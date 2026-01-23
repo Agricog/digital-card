@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { QRCodeSVG } from 'qrcode.react';
 
 const CARD_DATA = {
   name: 'Mick Stevenson',
@@ -205,14 +206,19 @@ export default function BusinessCard() {
           </div>
         )}
 
-        <div className="flex flex-col items-center gap-3 mt-6">
-          {CARD_DATA.logo && (
-            <img src={CARD_DATA.logo} alt={CARD_DATA.company} className="h-24 object-contain" />
-          )}
-          <p className="text-stone-400 text-xs">
-            © {new Date().getFullYear()} {CARD_DATA.company}
-          </p>
-        </div>
+        <div className="mt-4 bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center">
+  <QRCodeSVG value="https://mick.autaimate.com" size={160} />
+  <p className="text-stone-500 text-sm mt-3">Scan to save contact</p>
+</div>
+
+<div className="flex flex-col items-center gap-3 mt-6">
+  {CARD_DATA.logo && (
+    <img src={CARD_DATA.logo} alt={CARD_DATA.company} className="h-24 object-contain" />
+  )}
+  <p className="text-stone-400 text-xs">
+    © {new Date().getFullYear()} {CARD_DATA.company}
+  </p>
+</div>
       </div>
     </div>
   );
