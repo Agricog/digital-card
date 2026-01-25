@@ -5,7 +5,7 @@ const CARD_DATA = {
   name: 'Mick Stevenson',
   title: 'Founder',
   company: 'Autaimate',
-  tagline: 'Building software for underserved industries',
+  tagline: 'Specialized Software Automated Solutions',
   email: 'mick@autaimate.com',
   phone: '+44 7501 439406',
   website: 'https://autaimate.com',
