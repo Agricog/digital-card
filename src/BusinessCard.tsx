@@ -18,7 +18,7 @@ const CARD_DATA = {
   products: [
     { name: 'TradeCalcs', desc: 'BS 7671 calculators for electricians', url: 'https://tradecalcs.co.uk' },
     { name: 'EquipSafety', desc: 'QR-based safety compliance', url: 'https://equipsafety.co.uk' },
-    { name: 'DetailRecon', desc: 'AI reconnaissance for close protection', url: 'https://detailrecon.com' },
+    { name: 'SafeEat', desc: 'Allergen compliance for UK venues', url: 'https://safeeat.co.uk' },
   ],
 };
 
